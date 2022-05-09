@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Cards",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "properties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "position", "group"],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "position": {
+              "type": "number"
+            },
+            "price": {
+              "type": "number"
+            },
+            "rent": {
+              "type": "number"
+            },
+            "multpliedrent": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "housecost": {
+              "type": "number"
+            },
+            "group": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "mappings": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "name"],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+                "type": "string"
+            }
+          }
+        }
+      },
+      "chance": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string"
+            },
+            "tileid": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "communitychest": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string"
+            },
+            "tileid": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }

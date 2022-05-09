@@ -1,0 +1,313 @@
+{
+  "$schema": "./cards.schema.json",
+  "properties": [
+    {
+      "id": "guardiansgate",
+      "price": 60,
+      "rent": 2,
+      "multpliedrent": [
+        10,
+        30,
+        90,
+        160,
+        250
+      ],
+      "housecost": 50,
+      "group": "brown",
+      "position": 1
+    },
+    {
+      "id": "chest",
+      "position": 2,
+      "group": "chest"
+    },
+    {
+      "id": "ba3",
+      "position": 3,
+      "group": "brown",
+      "price": 60,
+      "rent": 4,
+      "multpliedrent": [
+        20,
+        60,
+        180,
+        320,
+        450
+      ],
+      "housecost": 50
+    },
+    {
+      "id": "uniformfee",
+      "position": 4,
+      "group": "tax",
+      "price": 200
+    },
+    {
+      "id": "centralparking",
+      "position": 5,
+      "group": "station",
+      "price": 200
+    },
+    {
+      "id": "h-radiowow",
+      "position": 6,
+      "group": "light-blue",
+      "price": 100,
+      "rent": 6,
+      "multpliedrent": [
+        30,
+        90,
+        270,
+        400,
+        550
+      ],
+      "housecost": 50
+    },
+    {
+      "id": "chance",
+      "position": 7,
+      "group": "chance"
+    },
+    {
+      "id": "padelcourt",
+      "position": 8,
+      "group": "light-blue",
+      "price": 100,
+      "rent": 6,
+      "multpliedrent": [
+        30,
+        90,
+        270,
+        400,
+        550
+      ],
+      "housecost": 50
+    },
+    {
+      "id": "kindergarten",
+      "position": 9,
+      "group": "light-blue",
+      "price": 120,
+      "rent": 8,
+      "multpliedrent": [
+        40,
+        100,
+        300,
+        450,
+        600
+      ],
+      "housecost": 50
+    },
+    {
+      "id": "jail",
+      "position": 10,
+      "group": "jail"
+    },
+    {
+      "id": "soccerfield",
+      "position": 11,
+      "group": "purple",
+      "price": 140,
+      "rent": 10,
+      "multpliedrent": [
+        50,
+        150,
+        450,
+        625,
+        750
+      ],
+      "housecost": 100
+    },
+    {
+      "id": "vendingmachines",
+      "position": 12,
+      "group": "utilities",
+      "price": 150
+    }
+  ],
+  "mappings": [
+    {
+      "id": "guardiansgate",
+      "name": "Guardian's Gate"
+    },
+    {
+      "id": "chest",
+      "name": "Community Chest"
+    },
+    {
+      "id": "ba3",
+      "name": "BA3 Building"
+    },
+    {
+      "id": "centralparking",
+      "name": "Central Parking"
+    },
+    {
+      "id": "h-radiowow",
+      "name": "H-Radio W"
+    }
+  ],
+  "chance": [
+    {
+      "title": "Advance to Go (Collect $200)",
+      "action": "move",
+      "tileid": "go"
+    },
+    {
+      "title": "Advance to Illinois Avenue - If you pass Go, collect $200",
+      "action": "move",
+      "tileid": "illinoiseave"
+    },
+    {
+      "title": "Advance to St. Charles Place - If you pass Go, collect $200",
+      "action": "move",
+      "tileid": "stcharlesplace"
+    },
+    {
+      "title": "Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total ten times the amount thrown.",
+      "action": "movenearest",
+      "groupid": "utility",
+      "rentmultiplier": 10
+    },
+    {
+      "title": "Advance token to the nearest Railroad and pay owner twice the rental to which he/she is otherwise entitled. If Railroad is unowned, you may buy it from the Bank.",
+      "action": "movenearest",
+      "groupid": "railroad",
+      "rentmultiplier": 2
+    },
+    {
+      "title": "Bank pays you dividend of $50",
+      "action": "addfunds",
+      "amount": 50
+    },
+    {
+      "title": "Get out of Jail Free - This card may be kept until needed, or traded/sold",
+      "action": "jail",
+      "subaction": "getout"
+    },
+    {
+      "title": "Go Back 3 Spaces",
+      "action": "move",
+      "count": -3
+    },
+    {
+      "title": "Go to Jail - Go directly to Jail - Do not pass Go, do not collect $200",
+      "action": "jail",
+      "subaction": "goto"
+    },
+    {
+      "title": "Make general repairs on all your property - For each house pay $25 - For each hotel $100",
+      "action": "propertycharges",
+      "buildings": 25,
+      "hotels": 100
+    },
+    {
+      "title": "Pay poor tax of $15",
+      "action": "removefunds",
+      "amount": 15
+    },
+    {
+      "title": "Take a trip to Reading Railroad - If you pass Go, collect $200",
+      "action": "move",
+      "tileid": "readingrailroad"
+    },
+    {
+      "title": "Take a walk on the Boardwalk - Advance token to Boardwalk",
+      "action": "move",
+      "tileid": "boardwalk"
+    },
+    {
+      "title": "You have been elected Chairman of the Board - Pay each player $50",
+      "action": "removefundstoplayers",
+      "amount": 50
+    },
+    {
+      "title": "Your building loan matures - Collect $150",
+      "action": "addfunds",
+      "amount": 50
+    }
+  ],
+  "communitychest": [
+    {
+      "title": "Advance to Go (Collect $200)",
+      "action": "move",
+      "tileid": "go"
+    },
+    {
+      "title": "Bank error in your favor - Collect $200 ",
+      "action": "addfunds",
+      "amount": 200
+    },
+    {
+      "title": "Doctor fee - Pay $50",
+      "action": "removefunds",
+      "amount": 50
+    },
+    {
+      "title": "From sale of stock you get $50",
+      "action": "addfunds",
+      "amount": 50
+    },
+    {
+      "title": "Get Out of Jail Free",
+      "action": "jail",
+      "subaction": "getout"
+    },
+    {
+      "title": "Go to Jail - Go directly to jail - Do not pass Go - Do not collect $200",
+      "action": "jail",
+      "subaction": "goto"
+    },
+    {
+      "title": "Grand Opera Night - Collect $50 from every player for opening night seats",
+      "action": "addfundsfromplayers",
+      "amount": 50
+    },
+    {
+      "title": "Holiday Fund matures - Receive $100",
+      "action": "addfunds",
+      "amount": 100
+    },
+    {
+      "title": "Income tax refund - Collect $20",
+      "action": "addfunds",
+      "amount": 20
+    },
+    {
+      "title": "Life insurance matures - Collect $100",
+      "action": "addfunds",
+      "amount": 100
+    },
+    {
+      "title": "Pay hospital fees of $100",
+      "action": "removefunds",
+      "amount": 100
+    },
+    {
+      "title": "Pay school fees of $150",
+      "action": "removefunds",
+      "amount": 150
+    },
+    {
+      "title": "Receive $25 consultancy fee",
+      "action": "addfunds",
+      "amount": 25
+    },
+    {
+      "title": "You are assessed for street repairs - $40 per house - $115 per hotel",
+      "action": "propertycharges",
+      "buildings": 40,
+      "hotels": 115
+    },
+    {
+      "title": "You have won second prize in a beauty contest - Collect $10",
+      "action": "addfunds",
+      "amount": 10
+    },
+    {
+      "title": "You inherit $100",
+      "action": "addfunds",
+      "amount": 100
+    }
+  ]
+}
