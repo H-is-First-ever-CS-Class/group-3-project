@@ -25,5 +25,5 @@ export const useBoardRotation = () => readonly(computed(() => {
     if (boardPosition.value >= 30) return "rotate(90deg)";
     else if (boardPosition.value >= 20) return "rotate(180deg)";
     else if (boardPosition.value >= 10) return "rotate(270deg)";
-    else if (boardPosition.value >= 0) return "rotate(0deg)";
+    else if (boardPosition.value >= 0) return "rotate(360deg)";
 }))
