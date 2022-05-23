@@ -2,25 +2,28 @@ import gun from "./gun";
 
 const user = gun.user();
 
-const USER_IS = user.is;
-const USER_IS_LOGGED_IN = () => USER_IS !== undefined;
-
-const useUserIsLoggedIn = () => readonly(watch([USER_IS], USER_IS_LOGGED_IN));
-
 /**
  * Create a new user
  * @param alias Alias/Username of the user
  * @param pass Password of the user
+ * @param refreshCallback A function that returns void that will be called to force update the component
  */
-const useUserCreate = (alias: string, pass: string) => user.create(alias, pass, (ack) => {
-    console.log(ack)
+const useUserCreate = (alias: string, pass: string, refreshCallback: () => void) => user.create(alias, pass, (ack) => {
+    console.log(ack);
+    refreshCallback();
 });
 /**
  * Authenticate the user into GUN
  * @param alias Alias/Username of the user
  * @param pass Password of the user
+ * @param refreshCallback A function that returns void that will be called to force update the component
  */
-const useUserAuth = (alias: string, pass: string) => user.auth(alias, pass)
+const useUserAuth = (alias: string, pass: string, refreshCallback: () => void) => user.auth(alias, pass, (ack) => {
+    console.log(ack);
+    refreshCallback();
+});
+
+const useShowLoginPrompt = () => user.is === undefined;
 
 export default user;
-export {useUserIsLoggedIn, useUserCreate, useUserAuth};
+export { useUserCreate, useUserAuth, useShowLoginPrompt };

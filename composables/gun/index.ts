@@ -1,4 +1,4 @@
 import gun from "./gun";
-import user, { useUserIsLoggedIn, useUserAuth, useUserCreate } from "./user";
+import user, { useUserAuth, useUserCreate, useShowLoginPrompt } from "./user";
 
-export {gun, user, useUserIsLoggedIn, useUserAuth, useUserCreate};
+export {gun, user, useUserAuth, useUserCreate, useShowLoginPrompt };
