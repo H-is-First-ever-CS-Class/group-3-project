@@ -7,6 +7,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.1"
+    "nuxt": "3.0.0-rc.3"
+  },
+  "dependencies": {
+    "gun": "^0.2020.1237"
   }
 }

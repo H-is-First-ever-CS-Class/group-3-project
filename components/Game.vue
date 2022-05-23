@@ -3,8 +3,8 @@
         <div class="col p-3">
             <div>
                 <canvas class="position-absolute"
-                    style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" v-bind:style="{transform: boardRotation}"></canvas>
-                <img src="/images/monopoly.svg" style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" v-bind:style="{transform: boardRotation}"/>
+                    style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" :style="{transform: boardRotation}"></canvas>
+                <img src="/images/monopoly.svg" style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" :style="{transform: boardRotation}"/>
             </div>
         </div>
         <div class="col p-3" style="min-width: 250px;">

@@ -6,5 +6,6 @@ export default defineNuxtConfig({
       shim: false,
       strict: true,
     },
-    css: ["@/assets/css/bootstrap.min.css"]
+    css: ["@/assets/css/bootstrap.min.css"],
+    ssr: false
 })
