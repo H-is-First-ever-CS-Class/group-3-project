@@ -11,7 +11,7 @@ const arbuf2hex = (buffer: ArrayBuffer) => {
 
 export default class Block {
     constructor(
-        public prevHash: string,
+        public prevHash: string | null,
         public action: BaseAction,
         public ts = Date.now(),
     ) {}

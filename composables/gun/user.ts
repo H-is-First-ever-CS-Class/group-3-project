@@ -22,8 +22,18 @@ const useUserAuth = (alias: string, pass: string, refreshCallback: () => void) =
     console.log(ack);
     refreshCallback();
 });
-
+/**
+ * Return true if the user is NOT logged in
+ */
 const useShowLoginPrompt = () => user.is === undefined;
 
+class UserNotLoggedInError extends Error {
+    constructor(message?: string, options?: ErrorOptions) {
+        const fmtMessage = `The application tried performing an action which requires authentication when the user is not logged in.${message !== undefined ? " Further details; " + message : "No further details were provided."}`;
+
+        super(fmtMessage, options);
+    }
+}
+
 export default user;
-export { useUserCreate, useUserAuth, useShowLoginPrompt };
+export { useUserCreate, useUserAuth, useShowLoginPrompt, UserNotLoggedInError };
