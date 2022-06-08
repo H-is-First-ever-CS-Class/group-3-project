@@ -1,5 +1,5 @@
 export enum BaseActionType {
-    transferFunds = "TRANSFER_FUND",
+    transferFunds = "TRANSFER_FUNDS",
     addFunds = "ADD_FUNDS",
     removeFunds = "REMOVE_FUNDS",
     buy = "PROPERTY_BUY",
@@ -7,7 +7,7 @@ export enum BaseActionType {
     genisis = "GENISIS",
 }
 
-export type PossibleJSONType = string | number | boolean | null | object | PossibleJSONType[];
+export type PossibleJSONType = string | number | boolean | null | object;
 
 export interface BaseActionData {
     [key: string]: PossibleJSONType

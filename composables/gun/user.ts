@@ -20,6 +20,7 @@ const useUserCreate = (alias: string, pass: string, refreshCallback: () => void)
  */
 const useUserAuth = (alias: string, pass: string, refreshCallback: () => void) => user.auth(alias, pass, (ack) => {
     console.log(ack);
+    BlockChain.instance.createSession();
     refreshCallback();
 });
 /**
