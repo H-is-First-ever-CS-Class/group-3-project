@@ -1,15 +1,6 @@
 import SEA from "gun/sea";
 import BaseAction, { BaseActionData, BaseActionType } from "./actions/BaseAction";
 
-// const textEncoder = new TextEncoder();
-
-// https://stackoverflow.com/a/40031979
-// const arbuf2hex = (buffer: ArrayBuffer) => {
-//     return [...new Uint8Array(buffer)]
-//         .map(x => x.toString(16).padStart(2, '0'))
-//         .join('');
-// }
-
 export class HashingError extends Error {
     constructor(message?: string, options?: ErrorOptions) {
         super(message, options);

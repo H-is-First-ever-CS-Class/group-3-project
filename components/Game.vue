@@ -12,7 +12,7 @@
                 style="min-height: calc(100vh - 2rem); gap: 1rem 0;">
                 <div class="p-3 border w-100 d-flex flex-column justify-content-between align-items-centers"
                     style="flex-grow: 3; gap: 1rem 0;">
-                    <div class="p-3 border w-100" style="/* flex-grow: 1; */">Card Name & Price</div>
+                    <div class="p-3 border w-100 card-name" style="/* flex-grow: 1; */">Card Name & Price</div>
                     <div class="border w-50 mx-auto" style="flex-grow: 1;">Card View</div>
                 </div>
 

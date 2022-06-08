@@ -7,7 +7,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.3"
+    "nuxt": "3.0.0-rc.3",
+    "sass": "^1.52.2",
+    "sass-loader": "^13.0.0"
   },
   "dependencies": {
     "gun": "^0.2020.1237"

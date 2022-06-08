@@ -5,6 +5,7 @@ export enum BaseActionType {
     buy = "PROPERTY_BUY",
     gotoJail = "GOTO_JAIL",
     genisis = "GENISIS",
+    move = "MOVE"
 }
 
 export type PossibleJSONType = string | number | boolean | null | object;
