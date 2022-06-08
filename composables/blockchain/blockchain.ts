@@ -23,7 +23,7 @@ export default class BlockChain {
         const genisisBlock = new Block(null, new GenisisAction(getIndexedObjectFromArray([user.is.pub]), 1500, true));
         this.currentSession = [user.is.pub, await genisisBlock.hash];
 
-        return gun.get("#sessions").get(this.currentSession[0]).get("#" + await genisisBlock.hash).put(genisisBlock.plainObjectString)
+        return gun.get("#sessions").get(this.currentSession[0] + "#" + await genisisBlock.hash).put(genisisBlock.plainObjectString)
             .once(async () => this.latestHash = await genisisBlock.hash);
     }
 
