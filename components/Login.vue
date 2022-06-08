@@ -22,4 +22,4 @@ const showSelf = useShowLoginPrompt;
 this
 </script>
 
-<style lang="scss">z</style>
+<style lang="scss"></style>
