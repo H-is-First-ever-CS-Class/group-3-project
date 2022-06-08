@@ -21,3 +21,5 @@ const signUp = useUserCreate;
 const showSelf = useShowLoginPrompt;
 this
 </script>
+
+<style lang="scss">z</style>
