@@ -1,4 +1,4 @@
 <template>
   <Game />
-  <Login />
+  <!-- <Login /> -->
 </template>
