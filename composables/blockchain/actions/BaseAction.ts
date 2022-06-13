@@ -1,9 +1,9 @@
 export enum BaseActionType {
     transferFunds = "TRANSFER_FUNDS",
-    addFunds = "ADD_FUNDS",
-    removeFunds = "REMOVE_FUNDS",
-    buy = "PROPERTY_BUY",
-    gotoJail = "GOTO_JAIL",
+    // addFunds = "ADD_FUNDS",
+    // removeFunds = "REMOVE_FUNDS",
+    // buy = "PROPERTY_BUY",
+    // gotoJail = "GOTO_JAIL",
     genisis = "GENISIS",
     move = "MOVE"
 }

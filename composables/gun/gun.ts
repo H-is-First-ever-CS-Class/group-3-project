@@ -1,5 +1,7 @@
 import GUN from "gun/gun";
 import SEA from "gun/sea";
+import LOAD from "gun/lib/load";
+import OPEN from "gun/lib/open";
 
 const gun = new GUN();
 
@@ -22,4 +24,4 @@ const getArrayFromIndexedObject = (indexedObj: object) => {
 };
 
 export default gun;
-export { SEA, getIndexedObjectFromArray, getArrayFromIndexedObject };
+export { SEA, getIndexedObjectFromArray, getArrayFromIndexedObject, LOAD, OPEN };

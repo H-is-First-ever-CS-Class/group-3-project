@@ -3,7 +3,12 @@
         <div class="col p-3">
             <div>
                 <canvas class="position-absolute"
-                    style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" :style="{transform: boardRotation}"></canvas>
+                    style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;
+                    z-index: 50;"
+                    height="1000" 
+                    width="1000"
+                    :style="{transform: boardRotation}"
+                    ref="canvas"></canvas>
                 <img src="/images/monopoly.svg" style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" :style="{transform: boardRotation}"/>
             </div>
         </div>
@@ -31,8 +36,19 @@
 </template>
 
 <script lang="ts" setup>
+import { CanvasHTMLAttributes, Ref } from 'vue';
+
 const boardRotation = useBoardRotation();
 const diceRoll = useRollDice;
 const position = usePosition();
 const boardPosition = useBoardPosition();
+
+const canvas: Ref<HTMLCanvasElement | null> = ref(null);
+
+onMounted(() => {
+    if (canvas.value === null) throw new Error("Cavas ref in Game.vue hasn't been initialized");
+
+    useTargetCanvas(canvas.value)
+    useDrawPlayers("#F00", 7);
+});
 </script>

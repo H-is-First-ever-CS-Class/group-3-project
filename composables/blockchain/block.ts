@@ -1,5 +1,6 @@
 import SEA from "gun/sea";
 import BaseAction, { BaseActionData, BaseActionType } from "./actions/BaseAction";
+import actionMappings from "./actions/actionMappings";
 
 export class HashingError extends Error {
     constructor(message?: string, options?: ErrorOptions) {
@@ -7,14 +8,25 @@ export class HashingError extends Error {
     }
 }
 
+type previousHash = string | null;
+
+type timestamp = number;
+
+interface BlockPlainObject {
+    prevHash: previousHash,
+    type: BaseActionType,
+    data: BaseActionData,
+    ts: timestamp
+}
+
 export default class Block {
     constructor(
-        public prevHash: string | null,
+        public prevHash: previousHash,
         public action: BaseAction,
-        public ts = Date.now(),
+        public ts: timestamp = Date.now(),
     ) {}
 
-    get plainObject() {
+    get plainObject(): BlockPlainObject {
         return {
             prevHash: this.prevHash,
             type: this.action.type,
@@ -34,18 +46,21 @@ export default class Block {
         return hash as Promise<string>;
     }
 
-    static async stringToBlock(serializedObject: string) {
-        const parsed: {prevHash: string | null, action: BaseActionData, ts: number, type: BaseActionType} = JSON.parse(serializedObject);
+    // static async stringToBlock(serializedObject: string) {
+    //     const parsed: BlockPlainObject = JSON.parse(serializedObject);
 
-        const names = parsed.type.toLowerCase().split("_");
-        // name[0].toUpperCase();
-        const formattedName = names.map((name) => {
-            const splitName = name.split("");
-            splitName[0] = splitName[0].toUpperCase();
-            return splitName;
-        }).join("");
+    //     const params = Object.values(parsed.data);
+    //     const action = new (actionMappings[parsed.type])(...(Object.values(parsed.data)))
 
-        const action: BaseAction = (await import(`./actions/${formattedName}Action`)).default;
-        return new Block(parsed.prevHash, action, parsed.ts);
-    }
+    //     // const names = parsed.type.toLowerCase().split("_");
+    //     // // name[0].toUpperCase();
+    //     // const formattedName = names.map((name) => {
+    //     //     const splitName = name.split("");
+    //     //     splitName[0] = splitName[0].toUpperCase();
+    //     //     return splitName;
+    //     // }).join("");
+
+    //     // const action: BaseAction = (await import(`./actions/${formattedName}Action`)).default;
+    //     // return new Block(parsed.prevHash, action, parsed.ts);
+    // }
 }
