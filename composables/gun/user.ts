@@ -28,7 +28,8 @@ const useUserAuth = (alias: string, pass: string, refreshCallback: () => void) =
  */
 const useShowLoginPrompt = () => user.is === undefined;
 
-class UserNotLoggedInError extends Error {
+// I get UserNotLoggedInError is already defined for some strange reason
+class RenamedUserNotLoggedInError extends Error {
     constructor(message?: string, options?: ErrorOptions) {
         const fmtMessage = `The application tried performing an action which requires authentication when the user is not logged in.${message !== undefined ? " Further details; " + message : "No further details were provided."}`;
 
@@ -37,4 +38,4 @@ class UserNotLoggedInError extends Error {
 }
 
 export default user;
-export { useUserCreate, useUserAuth, useShowLoginPrompt, UserNotLoggedInError };
+export { useUserCreate, useUserAuth, useShowLoginPrompt, RenamedUserNotLoggedInError as UserNotLoggedInError };
