@@ -1,18 +1,12 @@
 <template>
-    <div class="row g-0">
-        <div class="col p-3">
+    <div class="grid gap-0 grid-rows-1 grid-cols-2">
+        <div class="p-3">
             <div>
-                <canvas class="position-absolute"
-                    style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;
-                    z-index: 50;"
-                    height="1000" 
-                    width="1000"
-                    :style="{transform: boardRotation}"
-                    ref="canvas"></canvas>
+
                 <img src="/images/monopoly.svg" style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" :style="{transform: boardRotation}"/>
             </div>
         </div>
-        <div class="col p-3" style="min-width: 250px;">
+        <div class="p-3" style="min-width: 250px;">
             <div class="d-flex flex-column justify-content-between align-items-center"
                 style="min-height: calc(100vh - 2rem); gap: 1rem 0;">
                 <div class="p-3 border w-100 d-flex flex-column justify-content-between align-items-centers"
@@ -43,12 +37,14 @@ const diceRoll = useRollDice;
 const position = usePosition();
 const boardPosition = useBoardPosition();
 
-const canvas: Ref<HTMLCanvasElement | null> = ref(null);
+// const canvas: Ref<HTMLCanvasElement | null> = ref(null);
 
-onMounted(() => {
-    if (canvas.value === null) throw new Error("Cavas ref in Game.vue hasn't been initialized");
+// onMounted(() => {
+//     if (canvas.value === null) throw new Error("Cavas ref in Game.vue hasn't been initialized");
 
-    useTargetCanvas(canvas.value)
-    useDrawPlayers("#F00", 7);
-});
+//     useTargetCanvas(canvas.value)
+//     useDrawPlayer("#F00");
+// });
+
+// onUpdated(() => useDrawPlayer("#F00"));
 </script>

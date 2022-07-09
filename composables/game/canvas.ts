@@ -3,7 +3,6 @@
  */
 const standardWH = 1000;
 
-
 // Diff of big cell to standard cell is 110
 const mapping: Record<number, number> = {
     0: standardWH - 62.5,
@@ -21,6 +20,9 @@ const mapping: Record<number, number> = {
 let canvas: HTMLCanvasElement;
 let canvasContext: CanvasRenderingContext2D;
 
+/**
+ * Initialize the local canvas variables to point to a desired canvas
+ */
 export const useTargetCanvas = (targetCanvas: HTMLCanvasElement) => {
     canvas = targetCanvas;
 
@@ -30,11 +32,20 @@ export const useTargetCanvas = (targetCanvas: HTMLCanvasElement) => {
     canvasContext = renderingContext;
 };
 
+/**
+ * Clear the canvas
+ */
 export const useClearCanvas = () => {
     canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-export const useDrawPlayers = (color: string, boardPos: 0|1|2|3|4|5|6|7|8|9) => {
+/**
+ * Draw a player
+ */
+export const useDrawPlayer = (color: string, boardPos?: 0|1|2|3|4|5|6|7|8|9 | number) => {
+    if (boardPos === undefined) boardPos = useLowerRowPosition().value;
+    if (boardPos > 9) throw new Error("Illegal position returned by useLowerRowPosition");
+
     useClearCanvas();
     canvasContext.beginPath();
     canvasContext.fillStyle = color;

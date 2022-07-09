@@ -1,3 +1,5 @@
+import { Ref } from "vue";
+
 // The internal position value that will keep track of the player on the board
 const position = ref(0);
 
@@ -16,6 +18,11 @@ export const useMove = (movements: number) => position.value += movements;
  * A function that returns a readonly value of the player's position on the board. Useful for calculating which tile the player is on
  */
 export const useBoardPosition = () => readonly(computed(() => position.value % 40));
+
+/**
+ * A function that will calculate the position on the board based on the board's lower row
+ */
+export const useLowerRowPosition = () => readonly(computed(() => position.value % 10));
 
 /**
  * Calculates the board's rotation
