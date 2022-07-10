@@ -1,12 +1,10 @@
 <template>
     <div class="grid gap-0 grid-rows-1 grid-cols-2">
-        <div class="p-3">
-            <div>
-
-                <img src="/images/monopoly.svg" style="height: calc(100vh - 2rem); width: calc(100vh - 2rem); transition-property: transform; transition-duration: 200ms; transition-timing-function: linear;" :style="{transform: boardRotation}"/>
-            </div>
+        <div class="p-4 relative">
+            <InteractiveBoardView></InteractiveBoardView>
+            <img src="/images/monopoly.svg" class="absolute w-[calc(100%-2rem)] transition-transform duration-200 ease-linear" :style="{transform: boardRotation}"/>
         </div>
-        <div class="p-3" style="min-width: 250px;">
+        <div class="p-4" style="min-width: 250px;">
             <div class="grid gap-4 grid-rows-4 grid-cols-1 h-full">
                 <div class="p-3 border row-span-2">
                     <div class="p-3 border w-1/2 mx-auto">Card Name & Price</div>
@@ -25,7 +23,7 @@
                     </div>
                 </div>
 
-                <button v-on:click="diceRoll()">Roll Dice. Board position is {{ boardPosition }} (actual: {{ position }})</button>
+                <button v-on:click="diceRoll()" class="bg-cyan-300 rounded-lg">Roll Dice. Board position is {{ boardPosition }} (actual: {{ position }})</button>
             </div>
         </div>
     </div>
