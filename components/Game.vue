@@ -1,8 +1,8 @@
 <template>
     <div class="grid gap-0 grid-rows-1 grid-cols-2">
         <div class="p-4 relative">
-            <InteractiveBoardView></InteractiveBoardView>
             <img src="/images/monopoly.svg" class="absolute w-[calc(100%-2rem)] transition-transform duration-200 ease-linear" :style="{transform: boardRotation}"/>
+            <InteractiveBoardView></InteractiveBoardView>
         </div>
         <div class="p-4" style="min-width: 250px;">
             <div class="grid gap-4 grid-rows-4 grid-cols-1 h-full">
